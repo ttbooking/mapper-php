@@ -1,5 +1,5 @@
 {
-    "name": "runz0rd/mapper-php",
+    "name": "ttbooking/mapper-php",
     "description": "Model mapping, unmapping and validation",
     "keywords": ["library", "php", "object", "mapper", "validator", "traits"],
     "license": "MIT",
@@ -12,7 +12,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/runz0rd/mapper-php/issues"
+        "issues": "https://github.com/ttbooking/mapper-php/issues"
     },
     "require": {
         "ttbooking/common-php": "2.2.*",
