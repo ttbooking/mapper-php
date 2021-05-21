@@ -55,7 +55,7 @@ class XmlModelMapper extends ModelMapper implements IModelMapper
         if (!is_object($source) || Validation::isEmpty($source)) {
             throw new \InvalidArgumentException('Source must be an object with properties.');
         }
-        if (!is_object($model) || Validation::isEmpty($model)) {
+        if (!is_object($model)) {
             throw new \InvalidArgumentException('Model must be an object with properties.');
         }
         $modelClass = new ModelClass($model);

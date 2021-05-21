@@ -8,14 +8,14 @@
  */
 use Validator\ModelValidator;
 
-class ModelValidatorTest extends PHPUnit_Framework_TestCase {
+class ModelValidatorTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var ModelValidator
      */
     public $modelValidator;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->modelValidator = new ModelValidator();
         parent::setUp();
     }
@@ -27,15 +27,16 @@ class ModelValidatorTest extends PHPUnit_Framework_TestCase {
      */
     public function testValidate($validModel, $requiredType) {
         $this->modelValidator->validate($validModel, $requiredType);
+        $this->expectNotToPerformAssertions();
     }
 
     /**
      * @param $invalidModel
      * @param $requiredType
      * @dataProvider invalidModels
-     * @expectedException Exception
      */
     public function testValidateFail($invalidModel, $requiredType) {
+        $this->expectException(Exception::class);
         $this->modelValidator->validate($invalidModel, $requiredType);
     }
 

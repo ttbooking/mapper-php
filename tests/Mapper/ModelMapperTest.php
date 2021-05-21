@@ -8,14 +8,14 @@
  */
 use Mapper\ModelMapper;
 
-class ModelMapperTest extends \PHPUnit_Framework_TestCase {
+class ModelMapperTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * @var ModelMapper
 	 */
 	public $modelMapper;
 
-	public function setUp() {
+	public function setUp(): void {
 		$this->modelMapper = new ModelMapper();
 		parent::setUp();
 	}
@@ -34,9 +34,9 @@ class ModelMapperTest extends \PHPUnit_Framework_TestCase {
      * @param $source
      * @param $model
      * @dataProvider invalidMapValues
-     * @expectedException \Exception
      */
     public function testMapFail($source, $model) {
+        $this->expectException(\Exception::class);
         $this->modelMapper->map($source, $model);
     }
 
@@ -53,9 +53,9 @@ class ModelMapperTest extends \PHPUnit_Framework_TestCase {
     /**
      * @param $model
      * @dataProvider invalidUnmapValues
-     * @expectedException \Exception
      */
     public function testUnmapFail($model) {
+        $this->expectException(\Exception::class);
         $this->modelMapper->unmap($model);
     }
 

@@ -118,6 +118,7 @@ class NestedTestModel {
     /**
      * @Annotation\Type("string")
      * @Annotation\Xml("attribute")
+     * @xmlAttribute
      * @var string
      */
     public $attribute1;

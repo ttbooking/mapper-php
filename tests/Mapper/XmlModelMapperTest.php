@@ -9,14 +9,14 @@
 use Mapper\XmlModelMapper;
 use Common\Util\Xml;
 
-class XmlModelMapperTest extends PHPUnit_Framework_TestCase {
+class XmlModelMapperTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var XmlModelMapper
      */
     public $xmlMapper;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->xmlMapper = new XmlModelMapper();
         parent::setUp();
     }
@@ -38,6 +38,7 @@ class XmlModelMapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testUnmap($model, $expectedXml) {
         $actualXml = $this->xmlMapper->unmap($model);
+        $actualXml = preg_replace('/[\n\r]/', '', $actualXml);
         $this->assertEquals($expectedXml, $actualXml);
     }
 
